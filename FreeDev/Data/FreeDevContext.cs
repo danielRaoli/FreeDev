@@ -12,8 +12,9 @@ namespace FreeDev.Data
         }
 
         public DbSet<UsuarioModel> Usuarios {get; set;}
+        public DbSet<UsuarioDevModel> UsuariosDev {get; set;}
 
-        public DbSet<UsuarioDevModel> UsuariosDev { get; set;}
+        
 
     }
 }

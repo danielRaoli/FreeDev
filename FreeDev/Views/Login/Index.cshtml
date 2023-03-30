@@ -1,5 +1,6 @@
 ﻿@model LoginViewModel
 @{
+    Layout = "_LayoutDeslogado";
     ViewData["title"] = "Entre e comece como um membro FreeDev";
 }
 
@@ -17,7 +18,7 @@
 }
 
 <div class="row">
-    <form>
+    <form asp-action="Entrar">
         <div class="row">
             <div class="form-group">
                 <label class="form-label" for="Email">@Html.DisplayNameFor(x => x.Email)</label>

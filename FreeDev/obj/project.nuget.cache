@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MJ/E0I4xRBWce8cCYQjx1qY+xhsvtCqlkf00F6Ya5O3/LB0x3BSoxiDzLnbGGX6HfHZUxwdYB8E9Roe5HVii1A==",
+  "dgSpecHash": "pcgD6jctZbfIWSzUQpcv2T4QpN4ZaLkzbdoW6JsXr9KJDAUsUh6MHbsluLPm11ykWHnBtag4+c53xr45H6vqCw==",
   "success": true,
   "projectFilePath": "C:\\Users\\daniel\\source\\repos\\FreeDev\\FreeDev\\FreeDev.csproj",
   "expectedPackageFiles": [
@@ -42,6 +42,7 @@
     "C:\\Users\\daniel\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\daniel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\daniel\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

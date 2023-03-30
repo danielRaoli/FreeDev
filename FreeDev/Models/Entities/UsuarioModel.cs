@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FreeDev.Helpers;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Reflection.Metadata.Ecma335;
 using System.Reflection.PortableExecutable;
@@ -8,6 +10,7 @@ namespace FreeDev.Models.Entities
     public class UsuarioModel
     {
         [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Display(Name="Nome")]
@@ -51,7 +54,12 @@ namespace FreeDev.Models.Entities
 
         public bool ValidaSenha(string senha)
         {
-            return Senha.Equals(senha);
+            return Senha.Equals(senha.GerarHash());
+        }
+
+        public void SetSenha()
+        {
+            Senha = Senha.GerarHash();
         }
 
 

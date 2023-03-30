@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9+kP0c27RtPDN0TgZdSGYd9P6LLtcRFc5b1hiyVO2ts=",
+  "Hash": "fSdUYK8Zlg7P5Y3yZYFJv7DCZmZrM4kAwPJnzZwmLTo=",
   "Source": "FreeDev",
   "BasePath": "_content/FreeDev",
   "Mode": "Default",
@@ -865,6 +865,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
+    },
+    {
+      "Identity": "C:\\Users\\daniel\\source\\repos\\FreeDev\\FreeDev\\wwwroot\\lib\\Imagens\\perfilvazio.png",
+      "SourceId": "FreeDev",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\daniel\\source\\repos\\FreeDev\\FreeDev\\wwwroot\\",
+      "BasePath": "_content/FreeDev",
+      "RelativePath": "lib/Imagens/perfilvazio.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\Imagens\\perfilvazio.png"
     },
     {
       "Identity": "C:\\Users\\daniel\\source\\repos\\FreeDev\\FreeDev\\wwwroot\\lib\\jquery\\dist\\jquery.js",

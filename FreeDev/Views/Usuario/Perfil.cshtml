@@ -1,0 +1,26 @@
+﻿@model FreeDev.Models.Entities.UsuarioModel;
+
+@{
+    ViewData["title"] = "Perfil";
+}
+
+<div style="margin-bottom:40px" class="text-center">
+    <h1>@ViewData["title"]</h1>
+</div>
+<hr />
+
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Nome</h5>
+        <dl class="list-group list-group-flush">
+            <dt>Email</dt>
+            <dd class="list-group-item">@Model.Email</dd>
+            <dt>Telefone</dt>
+            <dd class="list-group-item">@Model.Telefone</dd>
+        </dl>
+    </div>
+    <div class="card-body">
+        <a role="button" class="btn btn-outline-primary">editar perfil</a>
+        <a role="button" class="btn btn-outline-primary">alterar senha</a>
+    </div>
+</div>
