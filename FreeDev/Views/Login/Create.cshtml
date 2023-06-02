@@ -1,6 +1,7 @@
-﻿@model FreeDev.Models.Entities.UsuarioDevModel
+﻿@model FreeDev.Models.Entities.UsuarioModel
 
 @{
+    Layout = "_LayoutDeslogado";
     ViewData["title"] = "Entre e comece como um membro FreeDev";
 }
 
@@ -41,18 +42,12 @@
                     <span class="text-danger" asp-validation-for="Senha"></span>
                 </div>
                 <div class="form-group">
-                    <label for="Descricao" class="col-lg-2 control-label">@Html.DisplayNameFor(x => x.Descricao)</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" asp-for="Descricao"></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
                     <div style="margin-top:10px" class="text-center">
                         <button type="submit" class="btn btn-success">Cadastrar</button>
                         <a role="button" class="btn btn-danger" asp-action="Index" asp-controller="Login">Voltar</a>
                     </div>
                 </div>
-
+            </div>
         </fieldset>
 
     </form>

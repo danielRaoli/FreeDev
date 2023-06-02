@@ -1,6 +1,7 @@
-﻿@model FreeDev.Models.Entities.UsuarioModel
+﻿@model FreeDev.Models.Entities.UsuarioDevModel
 
 @{
+    Layout = "_LayoutDeslogado";
     ViewData["title"] = "Entre e comece como um membro FreeDev";
 }
 
@@ -10,15 +11,16 @@
 <hr />
 @if (TempData["alertError"] != null)
 {
-    <div role="alert" class="alert alert-success">
+    <div role="alert" class="alert alert-danger">
         @TempData["alertError"]
         <button type="button" class="btn btn-danger btn-close btn-sm close-alert" arial-label="Close">X</button>
     </div>
 }
 
 <div class="container" style="width:400px">
-    <form asp-action="Create">
+    <form asp-action="CreateDev">
         <fieldset>
+            <div class="row">
                 <div class="form-group">
                     <label class="form-label" for="Nome">@Html.DisplayNameFor(x => x.Nome)</label>
                     <input class="form-control" asp-for="Nome" />
@@ -39,19 +41,27 @@
                     <input type="password" class="form-control" asp-for="Senha" />
                     <span class="text-danger" asp-validation-for="Senha"></span>
                 </div>
-
-                <div style="margin-top:10px" class="text-center">
-                    <button type="submit" class="btn btn-success">Cadastrar</button>
-                    <a role="button" class="btn btn-danger" asp-action="Index" asp-controller="Login">Voltar</a>
+                <div class="form-group">
+                    <label for="Descricao" class="col-lg-2 control-label">@Html.DisplayNameFor(x => x.Descricao)</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="3" asp-for="Descricao"></textarea>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <div style="margin-top:10px" class="text-center">
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <a role="button" class="btn btn-danger" asp-action="Index" asp-controller="Login">Voltar</a>
+                    </div>
+                </div>
+
         </fieldset>
 
     </form>
 </div>
+
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
     }
-

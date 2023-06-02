@@ -1,0 +1,27 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FreeDev.Models.Entities
+{
+    public class UsuarioDevSemSenhaModel
+    {
+        public byte[]? Foto { get; set; }
+        public int Id { get; set; }
+        [Display(Name = "Nome")]
+        [Required(ErrorMessage = "Preencha esse campo obrigatório")]
+        public string Nome { get; set; }
+
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Preencha esse campo obrigatório")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Digite um email válido")]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Display(Name = "Telefone")]
+        [Required(ErrorMessage = "Preencha esse campo obrigatório")]
+        public string Telefone { get; set; }
+
+        [Display(Name = " Descrição")]
+        public string Descricao { get; set; }
+
+    }
+}

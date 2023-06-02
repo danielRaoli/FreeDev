@@ -10,7 +10,6 @@ namespace FreeDev.Models.Entities
     public class UsuarioModel
     {
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Display(Name="Nome")]
@@ -33,6 +32,7 @@ namespace FreeDev.Models.Entities
         [DataType(DataType.Password)]
         public string Senha { get; set; }
 
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
         public DateTime DataCriacao { get; set; }
@@ -50,6 +50,7 @@ namespace FreeDev.Models.Entities
             Email = email;
             Telefone = telefone;
             Senha = senha;
+           
         }
 
         public bool ValidaSenha(string senha)
@@ -60,6 +61,11 @@ namespace FreeDev.Models.Entities
         public void SetSenha()
         {
             Senha = Senha.GerarHash();
+        }
+
+        public void SetNovaSenha(string novaSenha)
+        {
+            Senha = novaSenha.GerarHash();
         }
 
 

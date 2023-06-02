@@ -1,4 +1,4 @@
-namespace FreeDev.Models
+namespace FreeDev.Models.ViewModels
 {
     public class ErrorViewModel
     {

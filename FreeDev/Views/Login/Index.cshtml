@@ -1,4 +1,4 @@
-﻿@model LoginViewModel
+﻿@model FreeDev.Models.ViewModels.LoginViewModel
 @{
     Layout = "_LayoutDeslogado";
     ViewData["title"] = "Entre e comece como um membro FreeDev";
@@ -11,10 +11,13 @@
 
 @if (TempData["alertError"] != null)
 {
-    <div role="alert" class="alert alert-success">
-        @TempData["alertError"]
-        <button type="button" class="btn btn-danger btn-close btn-sm close-alert" arial-label="Close">X</button>
-    </div>
+
+        <div role="alert" class="alert alert-danger text-center" style="width:400px">
+            @TempData["alertError"]
+            <button type="button" class="btn btn-danger btn-close btn-sm close-alert" arial-label="Close"></button>
+        </div>
+    
+
 }
 
 <div class="row">
@@ -38,9 +41,9 @@
     <div class="text-center">
         <h4>Ainda não tem um conta ?</h4>
         <div>
-            <a role="button" class="btn btn-primary" asp-action="Create" asp-controller="Usuario">Cadastrar como cliente</a>
+            <a role="button" class="btn btn-primary" asp-action="Create" asp-controller="Login">Cadastrar como cliente</a>
 
-            <a role="button" class="btn btn-primary" asp-action="Create" asp-controller="UsuarioDev">Cadastrar como Dev</a>
+            <a role="button" class="btn btn-primary" asp-action="CreateDev" asp-controller="Login">Cadastrar como Dev</a>
         </div>
     </div>
 

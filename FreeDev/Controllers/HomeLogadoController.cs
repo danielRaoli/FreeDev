@@ -1,8 +1,10 @@
-﻿using FreeDev.Services;
+﻿using FreeDev.Filters;
+using FreeDev.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FreeDev.Controllers
 {
+    [FiltroUsuarioLogado]
     public class HomeLogadoController : Controller
     {
         private readonly UsuarioService _usuarioService;

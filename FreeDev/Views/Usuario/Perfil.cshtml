@@ -7,6 +7,13 @@
 <div style="margin-bottom:40px" class="text-center">
     <h1>@ViewData["title"]</h1>
 </div>
+@if(TempData["alertSuccess"] != null){
+    <div role="alert" class="alert alert-success">
+        @TempData["alertError"]
+        <button type="button" class="btn btn-danger btn-close btn-sm closer-alert" arial-label="Close">X</button>
+    </div>
+}
+
 <hr />
 
 <div class="card" style="width: 18rem;">
@@ -20,7 +27,7 @@
         </dl>
     </div>
     <div class="card-body">
-        <a role="button" class="btn btn-outline-primary">editar perfil</a>
-        <a role="button" class="btn btn-outline-primary">alterar senha</a>
+        <a role="button" class="btn btn-outline-primary" asp-action="Perfil" asp-controller="Usuario">editar perfil</a>
+        <a role="button" class="btn btn-outline-primary" asp-action="AlterarSenha" asp-controller="Usuario">alterar senha</a>
     </div>
 </div>

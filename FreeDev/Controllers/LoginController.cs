@@ -1,5 +1,6 @@
 ﻿using FreeDev.Helpers;
-using FreeDev.Models;
+using FreeDev.Models.Entities;
+using FreeDev.Models.ViewModels;
 using FreeDev.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Reflection.Metadata.Ecma335;
@@ -39,11 +40,53 @@ namespace FreeDev.Controllers
                         return RedirectToAction("Index", "HomeLogado");
                     }
                 }
+                TempData["alertError"] = "O email do usuário esta incorreto";
+                return RedirectToAction("Index", "Login");
             }
-            return View(loginView);
+            TempData["alertError"] = "A senha ou email do usuário estão incorretos";
+            return RedirectToAction("Index","Login");
+        }
+        public IActionResult Create()
+        {
+            return View();
         }
 
-        public IActionResult Sair()
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(UsuarioModel usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                await _usuarioService.CadastrarUsuario(usuario);
+                return RedirectToAction("Index", "HomeLogado");
+            }
+            TempData["errorAlert"] = "Algo deu errado ao tentar fazer o cadastro, tenha certeza de preencher todos os dados";
+            return View(usuario);
+        }
+
+
+        public IActionResult CreateDev()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateDev(UsuarioDevModel usuarioDev)
+        {
+            if (ModelState.IsValid)
+            {
+                await _usuarioService.CadastrarUsuario(usuarioDev);
+                _sessao.CriarSessao(usuarioDev);
+                return RedirectToAction("Index", "HomeLogado");
+            }
+            TempData["alertError"] = "Algo deu errado ao tentar fazer o cadastro, tenha certeza de preencher todos os dados";
+            return View(usuarioDev);
+        }
+
+        public IActionResult Logout()
         {
             _sessao.DeletarSessao();
             return RedirectToAction(nameof(Index));

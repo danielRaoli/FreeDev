@@ -21,7 +21,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\lib\Imagens\" />
+    <Folder Include="Models\Enums\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Login\CreateDev.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

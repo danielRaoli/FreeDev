@@ -2,7 +2,7 @@
 @model IEnumerable<UsuarioDevModel>
 
 @{
-    ViewData["title"] = "Entre e comece como um membro FreeDev";
+    ViewData["title"] = "Analistas e Desenvolvedores";
 }
 
 <div style="margin-bottom:40px" class="text-center">
@@ -19,7 +19,15 @@
                 <div class="row align-items-center" style="margin-top:10px;height:100px">
                     <div class="col" style="margin-left:0">
                         <div class="container" style="width:78px;height:78px;margin-top:10px;margin-left:0">
-                            <img style="width:78px;height:78px;" src="~/lib/Imagens/perfilvazio.png" class="card-img-top" alt="...">
+                            @if (modelItem.FotoPerfil == null)
+                            {
+                                <img style="width:78px;height:78px;" src="~/lib/Imagens/perfilvazio.png" class="card-img-top" alt="...">
+                            }
+                            else{
+                                var base64 = Convert.ToBase64String(modelItem.FotoPerfil);
+                                var imgSrc = string.Format("data:/image/gif;base64,{0}", base64);
+                                <img src="@imgSrc" style="width:78px;height:78px;" />
+                            }
                         </div>
                     </div>
                     <div class="col" style="margin-right:4px">
@@ -29,7 +37,7 @@
                 <div class="card-body">
                     <h5>Avalições: 4,5</h5>
                     <p class="card-text">@modelItem.Descricao</p>
-                    <a href="#" class="btn btn-primary">Entrar em contato</a>
+                   <a role="button" class="btn btn-primary" href=mailto:@modelItem.Email?subject="link HTML" >Entrar em contato</a>
                 </div>
             </div>
         }

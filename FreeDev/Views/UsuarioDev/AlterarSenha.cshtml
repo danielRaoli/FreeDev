@@ -1,0 +1,54 @@
+﻿@model FreeDev.Models.ViewModels.AlterarSenhaModel
+
+@{
+    ViewData["title"] = "Alterar Senha";
+}
+
+<div style="margin-bottom:40px" class="text-center">
+    <h1>@ViewData["title"]</h1>
+</div>
+<hr />
+
+@if (TempData["alertError"] != null)
+{
+    <div role="alert" class="alert alert-danger">
+        @TempData["alertError"]
+        <button type="button" class="btn btn-danger btn-close btn-sm closer-alert" arial-label="Close">X</button>
+    </div>
+}
+
+
+<div class="container" style="width:400px">
+    <form asp-action="AlterarSenha" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="SenhaAtual" class="form-label">@Html.DisplayNameFor(modelItem => modelItem.SenhaAtual)</label>
+                <input asp-for="SenhaAtual" class="form-control" />
+                <span asp-validation-for="SenhaAtual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NovaSenha" class="form-label">@Html.DisplayNameFor(modelItem => modelItem.NovaSenha)</label>
+                <input asp-for="NovaSenha" class="form-control" />
+                <span asp-validation-for="NovaSenha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmarSenha" class="form-label">@Html.DisplayNameFor(modelItem => modelItem.ConfirmarSenha)</label>
+                <input asp-for="ConfirmarSenha" class="form-control" />
+                <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="text-center" style="margin-top:10px">
+                    <button type="submit" class="btn btn-outline-primary">Alterar</button>
+                    <a role="button" class="btn btn-danger" asp-action="Perfil" asp-controller="UsuarioDev">Voltar</a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,65 @@
+﻿@model FreeDev.Models.ViewModels.AlterarFoto
+
+@{
+    ViewData["title"] = "Entre e comece como um membro FreeDev";
+}
+
+<div style="margin-bottom:40px" class="text-center">
+    <h1>@ViewData["title"]</h1>
+</div>
+<hr />
+@if (TempData["alertError"] != null)
+{
+    <div role="alert" class="alert alert-success">
+        @TempData["alertError"]
+        <button type="button" class="btn btn-danger btn-close btn-sm close-alert" arial-label="Close">X</button>
+    </div>
+}
+
+<div class="container" style="width:400px">
+    <form asp-action="Editar" enctype="multipart/form-data" method="post">
+        <input type="hidden" asp-for="UsuarioDev.Id" />
+        <fieldset>
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="Arquivo" class="form-control">Foto</label>
+                    <input asp-for="Arquivo" type="file" accept="image/*" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="Nome">@Html.DisplayNameFor(x => x.UsuarioDev.Nome)</label>
+                    <input class="form-control" asp-for="UsuarioDev.Nome" />
+                    <span class="text-danger" asp-validation-for="UsuarioDev.Nome"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="">@Html.DisplayNameFor(x => x.UsuarioDev.Email)</label>
+                    <input type="email" class="form-control" asp-for="UsuarioDev.Email" />
+                    <span class="text-danger" asp-validation-for="UsuarioDev.Email"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="Telefone">@Html.DisplayNameFor(x => x.UsuarioDev.Telefone)</label>
+                    <input class="form-control" asp-for="UsuarioDev.Telefone" />
+                    <span class="text-danger" asp-validation-for="UsuarioDev.Telefone"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Descricao" class="col-lg-2 control-label">@Html.DisplayNameFor(x => x.UsuarioDev.Descricao)</label>
+                    <div class="col-lg-10">
+                        <textarea class="form-control" rows="3" asp-for="UsuarioDev.Descricao"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div style="margin-top:10px" class="text-center">
+                        <button type="submit" class="btn btn-success">Editar</button>
+                        <a role="button" class="btn btn-danger" asp-action="Perfil" asp-controller="UsuarioDev">Voltar</a>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

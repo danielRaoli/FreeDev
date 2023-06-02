@@ -1,0 +1,40 @@
+﻿@model FreeDev.Models.ViewModels.AlterarSenhaModel
+
+@{
+    ViewData["title"] = "Alterar Senha";
+}
+
+<div style="margin-bottom:40px" class="text-center">
+    <h1>@ViewData["title"]</h1>
+</div>
+<hr />
+
+@if (TempData["alertError"] != null)
+{
+    <div role="alert" class="alert alert-danger">
+        @TempData["alertError"]
+        <button type="button" class="btn btn-danger btn-close btn-sm closer-alert" arial-label="Close">X</button>
+    </div>
+}
+
+
+<div class="Row">
+    <form asp-action="AlterarSenha" method="post">
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="SenhaAtual" class="form-control">@Html.DisplayNameFor(modelItem => modelItem.SenhaAtual)</label>
+                <input asp-for="SenhaAtual" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="NovaSenha" class="form-control">@Html.DisplayNameFor(modelItem => modelItem.NovaSenha)</label>
+                <input asp-for="NovaSenha" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmarSenha" class="form-control">@Html.DisplayNameFor(modelItem => modelItem.ConfirmarSenha)</label>
+                <input asp-for="ConfirmarSenha" class="form-control" />
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+
